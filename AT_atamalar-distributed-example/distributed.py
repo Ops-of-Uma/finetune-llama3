@@ -86,7 +86,7 @@ def train_model(lora_model, train_dataset, test_dataset, tokenizer, local_rank):
     lora_model = DDP(lora_model.to(local_rank), device_ids=[local_rank])
     print("LoRA model is set up, starting the training now...")
     training_args = TrainingArguments(
-        output_dir="Meta-Llama-3.2-1B-Instruct-finetuned",
+        output_dir="Meta-Llama-3.2-3B-Instruct-ONNX-INT4",
         learning_rate=2e-5,
         per_device_train_batch_size=4,
         per_device_eval_batch_size=4,
@@ -130,7 +130,7 @@ if __name__ == "__main__":
     initialization = initialize_distributed()
 
     # Load model and tokenizer
-    model_name = "meta-llama/Llama-3.2-1B"
+    model_name = "nvidia/Meta-Llama-3.2-3B-Instruct-ONNX-INT4"
     model, tokenizer = load_model(model_name)
 
     # Load and prepare data

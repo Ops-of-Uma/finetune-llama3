@@ -9,7 +9,7 @@ WORKDIR /demo
 COPY distributed.py launch.sh /demo/
 
 # Create the checkpoint directory
-RUN mkdir -p /demo/Meta-Llama-3.2-1B-Instruct-finetuned && chmod -R 777 /demo/Meta-Llama-3.2-1B-Instruct-finetuned
+RUN mkdir -p /demo/Meta-Llama-3.2-3B-Instruct-ONNX-INT4 && chmod -R 777 /demo/Meta-Llama-3.2-3B-Instruct-ONNX-INT4
 
 # Run the bash file
 RUN chmod u+x launch.sh
